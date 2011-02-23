@@ -63,4 +63,12 @@ describe "something that needs sleepy" do
     end
   end
 
+  context "in the longer block form" do
+    it "returns the value of the block" do
+      within 0.5.seconds do
+        succeed_on_attempt(1).should ==  1
+      end
+    end
+  end
+
 end
